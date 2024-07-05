@@ -1,0 +1,123 @@
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4; /* 행간 */
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+/* img를 글자처럼 취급해서 아래쪽에 여백이 생김. 글자 baseline. 그래서 img를 block 
+즉 레이아웃으로 취급하여 여백을 줄임. */
+img {
+  display: block;
+}
+
+/* 모든 a태그의 밑줄은 없애겠다 */
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+header {
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+header .inner {
+  width: 1100px;
+  height: 120px;
+  /* 상하 마진은 0, 좌우는 width에 맞게 auto -> 가운데 정렬!! */
+  margin: 0 auto;
+  position: relative;
+}
+
+header .logo {
+  height: 75px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+header .sub-menu {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+header .sub-menu ul.menu {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+
+header .sub-menu ul.menu li::before {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+
+  /* position absolute가 있으면 요소가 Block요소로 변경됨 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+
+/* 이거 예쁘당 */
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+
+header .sub-menu .search {
+  height: 34px;
+  position: relative;
+}
+
+header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;
+}
+
+header .sub-menu .search input:focus {
+  width: 190px;
+  border-color: green;
+}
+
+header .sub-menu .search .material-icons {
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;
+}
+
+header .sub-menu .search.focused .material-icons {
+  opacity: 0;
+}
