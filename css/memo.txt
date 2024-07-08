@@ -1,0 +1,6 @@
+BEM (Block Element Modifier)
+: HTML 클래스 속성의 '작명법'
+
+'__' : 요소의 부모를 명시
+'--' : 요소의 상태를 명시
+
