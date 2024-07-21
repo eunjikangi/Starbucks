@@ -66,10 +66,22 @@ new Swiper('.promotion .swiper', {
     clickable: true
   },
   navigation: {
-    prevEl: '.promotion .swiper_prev',
-    nextEl: '.promotion .swiper_next'
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next'
   }
 });
+
+new Swiper('.awards .swiper', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
+
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -121,6 +133,6 @@ spyEls.forEach(function(spyEl) {
       // View Port 전체 : 1
       triggerHook: .8,
     })
-    .setClassToggle()
-    .addTo();
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller());
 });
